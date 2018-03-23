@@ -31,9 +31,9 @@ labels_train = labels_train[:len(labels_train)//100]
 #########################################################
 ### your code goes here ###
 
-for cvalue in [10,100,1000,10000]:
+for i in [10,26,50]:
 	from sklearn import svm
-	clf = svm.SVC(kernel='rbf', C=cvalue)
+	clf = svm.SVC(kernel='rbf', C=10000)
 
 	print(len(features_train))
 	print(len(features_test))
@@ -53,6 +53,10 @@ for cvalue in [10,100,1000,10000]:
 	#fig, subaxes = plt.subplots(1, 1, figsize=(7, 5))
 	#title = 'Linear SVC, C = {:.3f}'.format(cvalue)
 	#plt.plot(clf, features_train, labels_train, title)
+	pred = clf.predict(labels_test)
+	answer=pred[i]
+
+
 
 #########################################################
 

@@ -36,6 +36,19 @@ accuracy = clf.score(features_test, labels_test)
 
 print("Accuracy:", round(accuracy,3))
 
+
+from sklearn.neighbors import KNeighborsRegressor
+knn = KNeighborsRegressor(n_neighbors =3).fit(features_train, labels_train)
+
+t0 = time()
+clf.fit(features_train, labels_train)
+print ("training time:", round(time()-t0, 3), "s")
+
+accuracy = knn.score(features_test, labels_test)
+
+print("Accuracy:", round(accuracy,3))
+
+
 #########################################################
 
 
